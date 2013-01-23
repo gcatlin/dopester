@@ -42,18 +42,18 @@ class Toolbar {
 
         if ($enable_toolbar) {
             $toolbar = new Toolbar();
-            $toolbar->addPanel(new ServerInfoPanel('system'));
-            if (isset($_SESSION)) {
-                $toolbar->addPanel(new SessionPanel($_SESSION));
-            }
-            $toolbar->addPanel(new RequestPanel($_SERVER, $_POST, $_FILES));
-            $toolbar->addPanel(new IncludedFilesPanel($base_dir));
-            foreach (Profiler::getRegisteredProfilers() as $profiler) {
-                $toolbar->addPanel($profiler->createPanel());
-            }
 
             register_shutdown_function(function () use ($start_time, $toolbar) {
                 $elapsed = microtime(true) - $start_time;
+                $toolbar->addPanel(new ServerInfoPanel('system'));
+                if (isset($_SESSION)) {
+                    $toolbar->addPanel(new SessionPanel($_SESSION));
+                }
+                $toolbar->addPanel(new RequestPanel($_SERVER, $_POST, $_FILES));
+                $toolbar->addPanel(new IncludedFilesPanel($base_dir));
+                foreach (Profiler::getRegisteredProfilers() as $profiler) {
+                    $toolbar->addPanel($profiler->createPanel());
+                }
                 $toolbar->addPanel(new ElapsedTimePanel($elapsed));
                 echo $toolbar->render();
             });
