@@ -1,0 +1,28 @@
+{
+	"name": "gcatlin/dopester",
+	"description": "Performance and debugging toolbar library for PHP projects",
+
+	"authors": [
+		{
+			"name": "Geoff Catlin",
+			"email": "gcatlin@gmail.com",
+			"homepage": "https://github.com/gcatlin/",
+			"role": "developer"
+		}
+	],
+	"homepage": "https://github.com/gcatlin/dopester",
+	"license": "Apache-2.0",
+	"keywords": ["toolbar", "debugging"],
+	"support": {
+		"issues": "https://github.com/gcatlin/dopester/issues"
+	},
+	"type": "library,
+	"version": "0.1.0",
+
+	"autoload": {
+		"classmap": ["src/"],
+		"files": ["src/functions.php"]
+	},
+	"require": {
+	}
+}
