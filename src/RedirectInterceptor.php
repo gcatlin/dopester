@@ -58,7 +58,7 @@ class RedirectInterceptor {
 
                 // provide a link to follow the redirect
                 $url_enc = htmlspecialchars($url);
-                printf('<h1>Redirect Intercepted</h1><p>Continue to: <a href="%s">%s</a></p>', $url_enc, $url_enc);
+                printf("<h1>Redirect Intercepted</h1><p>Continue to: <a href=\"%s\">%s</a></p>\n", $url_enc, $url_enc);
             }
         }
         ob_end_flush();
