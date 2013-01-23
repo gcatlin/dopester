@@ -16,7 +16,7 @@
 	"support": {
 		"issues": "https://github.com/gcatlin/dopester/issues"
 	},
-	"type": "library,
+	"type": "library",
 	"version": "0.1.0",
 
 	"autoload": {
