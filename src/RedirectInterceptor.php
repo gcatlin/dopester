@@ -58,7 +58,7 @@ class RedirectInterceptor {
 
                 // provide a link to follow the redirect
                 $url_enc = htmlspecialchars($url);
-                printf("<h1>Redirect Intercepted</h1><p>Continue to: <a href=\"%s\">%s</a></p>\n", $url_enc, $url_enc);
+                printf('<style type="text/css">dt{float:left;clear:left;font-weight:bold}dt:after{content:":"}dd{padding:0 0 0 2em}</style><h1>Redirect Intercepted</h1><dl><dt>Location</dt><dd><a href="%s">%s</a></dd></dl><form action="%s"><input type="submit" value="Follow Redirect"></form>', $url_enc, $url_enc, $url_enc);
             }
         }
         ob_end_flush();
