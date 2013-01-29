@@ -6,8 +6,5 @@ use gcatlin\dopester as dopester;
 require __DIR__ . '/../src/bootstrap.php';
 
 dopester\Toolbar::register();
-?>
 
-<form action="redirect.php">
-    <input type="submit" value="Test Redirect">
-</form>
+header('Location: simple.php');
