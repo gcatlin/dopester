@@ -54,7 +54,7 @@ class RedirectInterceptor {
             $url = $this->getLocationUrl(headers_list());
             if ($url) {
                 // disable the redirect by clearing the header
-                header('Location:');
+                header_remove('Location');
 
                 // provide a link to follow the redirect
                 $url_enc = htmlspecialchars($url);
