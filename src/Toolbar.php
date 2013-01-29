@@ -43,7 +43,7 @@ class Toolbar {
         if ($enable_toolbar) {
             $toolbar = new Toolbar();
 
-            register_shutdown_function(function () use ($start_time, $toolbar) {
+            register_shutdown_function(function () use ($toolbar, $start_time, $base_dir) {
                 $elapsed = microtime(true) - $start_time;
                 $toolbar->addPanel(new ServerInfoPanel('system'));
                 if (isset($_SESSION)) {
